@@ -12,7 +12,7 @@
             padding: 20px;
             text-align: center;
         }
-        h1 { color: #00e676; }
+        h1 { color: #00e676; margin-bottom: 30px; }
         .app-list {
             display: flex;
             flex-direction: column;
@@ -35,7 +35,7 @@
         }
         .app-info { text-align: left; }
         .app-name { font-size: 20px; font-weight: bold; }
-        .app-package { color: #888; font-size: 14px; }
+        .app-package { color: #888; font-size: 14px; margin-top: 5px; }
         .btn-install {
             background-color: #00e676;
             color: black;
@@ -47,21 +47,29 @@
             cursor: pointer;
             text-decoration: none;
         }
+        .btn-install:hover {
+            background-color: #00b359;
+        }
     </style>
 </head>
 <body>
 
     <h1>Kho APK Của Tôi</h1>
     <div class="app-list" id="app-container">
-        <!-- Danh sách app tự động load từ apps.json -->
+        <!-- Đang tải dữ liệu... -->
     </div>
 
     <script>
-        // Tự động đọc dữ liệu từ file apps.json của bác
-        fetch('apps.json')
+        // Gọi trực tiếp link json của bác để tránh lỗi hiển thị
+        fetch('https://trongbts.github.io/kho-app/apps.json')
             .then(response => response.json())
             .then(data => {
                 const container = document.getElementById('app-container');
+                container.innerHTML = ''; // Xóa chữ đang tải
+                if (data.length === 0) {
+                    container.innerHTML = '<p>Không có ứng dụng nào.</p>';
+                    return;
+                }
                 data.forEach(app => {
                     const appHtml = `
                         <div class="app-item" tabindex="0">
@@ -69,11 +77,15 @@
                                 <div class="app-name">${app.name}</div>
                                 <div class="app-package">${app.package}</div>
                             </div>
-                            <a class="btn-install" href="${app.download_url}">Cài đặt</a>
+                            <a class="btn-install" href="${app.download_url}" download>Cài đặt</a>
                         </div>
                     `;
                     container.innerHTML += appHtml;
                 });
+            })
+            .catch(err => {
+                console.error(err);
+                document.getElementById('app-container').innerHTML = '<p style="color:red;">Lỗi tải danh sách ứng dụng!</p>';
             });
     </script>
 </body>
