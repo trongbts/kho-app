@@ -1,92 +1,1073 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kho Ứng Dụng TV</title>
-    <style>
-        body {
-            background-color: #121212;
-            color: white;
-            font-family: sans-serif;
-            padding: 20px;
-            text-align: center;
-        }
-        h1 { color: #00e676; margin-bottom: 30px; }
-        .app-list {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        .app-item {
-            background-color: #1e1e1e;
-            padding: 20px;
-            border-radius: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border: 2px solid #333;
-        }
-        .app-item:hover, .app-item:focus {
-            border-color: #00e676;
-            background-color: #2a2a2a;
-        }
-        .app-info { text-align: left; }
-        .app-name { font-size: 20px; font-weight: bold; }
-        .app-package { color: #888; font-size: 14px; margin-top: 5px; }
-        .btn-install {
-            background-color: #00e676;
-            color: black;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            font-weight: bold;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-        }
-        .btn-install:hover {
-            background-color: #00b359;
-        }
-    </style>
-</head>
-<body>
-
-    <h1>Kho APK Của Tôi</h1>
-    <div class="app-list" id="app-container">
-        <!-- Đang tải dữ liệu... -->
-    </div>
-
-    <script>
-        // Gọi trực tiếp link json của bác để tránh lỗi hiển thị
-        fetch('https://trongbts.github.io/kho-app/apps.json')
-            .then(response => response.json())
-            .then(data => {
-                const container = document.getElementById('app-container');
-                container.innerHTML = ''; // Xóa chữ đang tải
-                if (data.length === 0) {
-                    container.innerHTML = '<p>Không có ứng dụng nào.</p>';
-                    return;
-                }
-                data.forEach(app => {
-                    const appHtml = `
-                        <div class="app-item" tabindex="0">
-                            <div class="app-info">
-                                <div class="app-name">${app.name}</div>
-                                <div class="app-package">${app.package}</div>
-                            </div>
-                            <a class="btn-install" href="${app.download_url}" download>Cài đặt</a>
-                        </div>
-                    `;
-                    container.innerHTML += appHtml;
-                });
-            })
-            .catch(err => {
-                console.error(err);
-                document.getElementById('app-container').innerHTML = '<p style="color:red;">Lỗi tải danh sách ứng dụng!</p>';
-            });
-    </script>
-</body>
-</html>
+{
+  "Truyền Hình Trực Tuyến": [
+    {
+      "id": "tv1",
+      "title": "Cò Tivi",
+      "icon": "https://tivixiaomi.vn/TVstore/anh/truyenhinh/cotivi.png",
+      "rating": 4.9,
+      "version": "1.1.3",
+      "description": "Cò tivi ứng dụng xem Tivi, Bóng đá miễn phí tốt nhất hiện tại. Xem hơn 200 kênh truyền hình trong nước và quốc tế, Trực tiếp bóng đá ngoại hạng Anh, UEFA Champions League, LaLiga,Ligue 1 , Vleague....",
+      "screenshots": [
+        "https://raw.githubusercontent.com/tvstore012026/truyenhinh/main/co%20thethao.png"
+      ],
+      "downloadUrl": "https://github.com/rupanh123-phap/928394040393939339393939949430038458575758933030202020202848485858585949400485858585859402.github.io/releases/download/V1.0.0/cotivi.apk",
+      "packageName": "com.cofvuong.tivi",
+      "category_name": "Truyền Hình"
+    },
+    {
+      "id": "tv2",
+      "title": "iMediaTV-Xem HD",
+      "icon": "https://raw.githubusercontent.com/tvstore012026/Anh/main/imediaicon.png",
+      "rating": 4.8,
+      "version": "25.04.06.B",
+      "description": "Xem TV online, kênh địa phương, thể thao.",
+      "screenshots": [
+        "https://raw.githubusercontent.com/tvstore012026/Anh/main/ImediaTV.png"
+      ],
+      "downloadUrl": "https://tivixiaomi.vn/TVstore/truyenhinh/iMedia_TV_25.04.06.B.apk",
+      "packageName": "com.kt.apps.media.xemtv.beta",
+      "category_name": "Truyền Hình"
+    },
+    {
+      "id": "tv3",
+      "title": "DL Tivi - Dinhlap",
+      "icon": "https://raw.githubusercontent.com/tvstore012026/truyenhinh/main/DL%20tivi%20logo.png",
+      "rating": 4.2,
+      "version": "16.01",
+      "description": "DL Tivi là ứng dụng Truyền hình trực tuyến, các kênh địa phương và quốc tế dành cho cả điện thoại vài TV",
+      "screenshots": [
+        "https://raw.githubusercontent.com/tvstore012026/truyenhinh/main/DL%20TiVi.png"
+      ],
+      "downloadUrl": "https://tivixiaomi.vn/TVstore/truyenhinh/DL_Tivi_16.0.1.apk",
+      "packageName": "com.dinhlap.tivi",
+      "category_name": "Truyền Hình"
+    },
+    {
+      "id": "tv4",
+      "title": "QuanTV",
+      "icon": "https://cdn-icons-png.flaticon.com/512/1801/1801781.png",
+      "rating": 4.3,
+      "version": "25.09.21",
+      "description": "ứng dụng Truyền hình trực tuyến, các kênh địa phương và quốc tế dành cho cả điện thoại vài TV.",
+      "screenshots": [
+        "https://raw.githubusercontent.com/tvstore012026/Anh/main/QUANTV.jpg"
+      ],
+      "downloadUrl": "https://github.com/rupanh123-phap/928394040393939339393939949430038458575758933030202020202848485858585949400485858585859402.github.io/releases/download/V1.0.0/quantv.apk",
+      "packageName": "vn.quan.quantv",
+      "category_name": "Truyền Hình"
+    },
+    {
+      "id": "tv5",
+      "title": "TV 360",
+      "icon": "https://play-lh.googleusercontent.com/_9U3ssBJmeQlp8qg1vgSP4tn763MWc_zfO_n6g2klNNxJ_R1hMfI6v7xrKwIoow41YI",
+      "rating": 4.8,
+      "version": "5.4",
+      "description": "ứng dụng Truyền hình trực tuyến, các kênh địa phương và quốc tế dành cho cả điện thoại vài TV.",
+      "screenshots": [
+        "https://raw.githubusercontent.com/tvstore012026/Anh/main/tv360.webp"
+      ],
+      "downloadUrl": "https://github.com/rupanh123-phap/928394040393939339393939949430038458575758933030202020202848485858585949400485858585859402.github.io/releases/download/V1.0.0/tv360.apk",
+      "packageName": "com.viettel.tv360.androidtv",
+      "category_name": "Truyền Hình"
+    },
+    {
+      "id": "tv6",
+      "title": "VTVGo TV",
+      "icon": "https://raw.githubusercontent.com/tvstore012026/Anh/main/App-VTV-Go-200.webp",
+      "rating": 4.9,
+      "version": "11.12.30",
+      "description": "VTVgo là nền tảng truyền hình số (trực tuyến) Quốc gia.",
+      "screenshots": [
+        "https://raw.githubusercontent.com/tvstore012026/Anh/main/vtvgo.webp"
+      ],
+      "downloadUrl": "https://tivixiaomi.vn/TVstore/truyenhinh/MyTV_4.67.0_530_20251008.apk",
+      "packageName": "vn.vtv.vtvgo.smarttv",
+      "category_name": "Truyền Hình"
+    },
+    {
+      "id": "tv7",
+      "title": "MyTV",
+      "icon": "https://play-lh.googleusercontent.com/6H5TQl3eTUfhQLsdF9Aq9yIOrOZxypmQyEqMj9WFUhtjVjj4Ngyup4WR6quBwJf6Qg",
+      "rating": 4.8,
+      "version": "4.67.0_530_20251008",
+      "description": "Xem TV online, kênh địa phương, thể thao.",
+      "screenshots": [
+        "https://kinhdoanh.hanoi.vnpt.vn/Uploads/images/2020/H%C6%AF%E1%BB%9ANG%20D%E1%BA%AAN%20S%E1%BB%AC%20D%E1%BB%A4NG%20APP%20MYTV%20TR%C3%8AN%20SMARTTV/HUONG%20DAN%20MYTV8.jpg"
+      ],
+      "downloadUrl": "https://tivixiaomi.vn/TVstore/truyenhinh/MyTV_4.67.0_530_20251008.apk",
+      "packageName": "com.vnpt.mytv.androidtv",
+      "category_name": "Truyền Hình"
+    },
+    {
+      "id": "tv8",
+      "title": "VietPlay TV",
+      "icon": "https://vietplayplus.com/api/public/files/vietplayplus-placeholder_bhParT8xG.jpg",
+      "rating": 4.2,
+      "version": "16.01",
+      "description": "là ứng dụng Truyền hình trực tuyến, các kênh địa phương và quốc tế dành cho cả điện thoại vài TV",
+      "screenshots": [
+        "https://play-lh.googleusercontent.com/jlqypBHaA4X9BBKqaXa2SbQbudF0Mc27DDkfCpOR-vM_lnT1H-r8EFucS7Scke2KPA=w526-h296-rw"
+      ],
+      "downloadUrl": "https://github.com/rupanh123-phap/928394040393939339393939949430038458575758933030202020202848485858585949400485858585859402.github.io/releases/download/V1.0.0/vietplaytv.apk",
+      "packageName": "com.nghenhin24h.vietplaytv",
+      "category_name": "Truyền Hình"
+    }
+  ],
+  "Youtube - Video Giải Trí": [
+    {
+      "id": "yotube1",
+      "title": "ToTuBe -DL",
+      "icon": "https://raw.githubusercontent.com/tvstore012026/Anh/main/4452983956444474668.jpg",
+      "rating": 4.8,
+      "version": "6.4",
+      "description": "Ứng dụng chính thức của google có quảng cáo.",
+      "screenshots": [
+        "https://raw.githubusercontent.com/tvstore012026/Anh/main/totube.jpg"
+      ],
+      "downloadUrl": "https://github.com/tvstore012026/AppTV/raw/refs/heads/main/ToTube_6.4-DL.apk",
+      "packageName": "com.google.android.youtube.tv",
+      "category_name": "Youtube"
+    },
+    {
+      "id": "Youtube2",
+      "title": "SmartTube(stable)",
+      "icon": "https://raw.githubusercontent.com/tvstore012026/Anh/main/smarrttube%20icon.png",
+      "rating": 4.9,
+      "version": "Mới nhất",
+      "description": "Smarttube loại bỏ quảng cáo.",
+      "screenshots": [
+        "https://raw.githubusercontent.com/tvstore012026/Anh/main/SmartTubeApp.png"
+      ],
+      "downloadUrl": "http://tivixiaomi.vn/TVstore/truyenhinh/smarttube.apk",
+      "packageName": "org.smarttube.stable",
+      "category_name": "Youtube"
+    },
+    {
+      "id": "yotube3",
+      "title": "SmartTube(Beta)",
+      "icon": "https://cdn.aptoide.com/imgs/d/6/8/d682597676c0d3c928a0551bd37781f3.png",
+      "rating": 4.9,
+      "version": "1.1.3",
+      "description": "smarttube loại bỏ quảng cáo...",
+      "screenshots": [
+        "https://raw.githubusercontent.com/yuliskov/SmartTube/master/images/browse_home.png"
+      ],
+      "downloadUrl": "http://tivixiaomi.vn/TVstore/truyenhinh/smarttubebeta.apk",
+      "packageName": "org.smarttube.beta",
+      "category_name": "Youtube"
+    },
+    {
+      "id": "yotube4",
+      "title": "TizenTube",
+      "icon": "https://i0.wp.com/techspace.africa/wp-content/uploads/2025/11/tizentube.png?resize=696%2C392&ssl=1",
+      "rating": 4.8,
+      "version": "1.0.8",
+      "description": "Xem youtube chặn quảng cáo",
+      "screenshots": [
+        "https://upandclear.org/wp-content/uploads/2025/10/tizentube4.jpg"
+      ],
+      "downloadUrl": "https://github.com/rupanh123-phap/928394040393939339393939949430038458575758933030202020202848485858585949400485858585859402.github.io/releases/download/V1.0.0/tizentubegoc.apk",
+      "packageName": "io.gh.reisxd.tizentube.cobalt",
+      "category_name": "Youtube"
+    },
+    {
+      "id": "yotube5",
+      "title": "NoTube",
+      "icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiOQdkVYUIsYtF232DBs7VPV7nfILu0CKV6Q&s",
+      "rating": 4.2,
+      "version": "0.0.3DL",
+      "description": "ứng dụng xem youtube không quảng cáo",
+      "screenshots": [
+        "https://i.redd.it/notubetv-ad-free-youtube-leanback-for-android-tv-v0-cdemfqylr64f1.png?width=1202&format=png&auto=webp&s=fffa5c4adb2021ac4fa81ef214d419abb5848306"
+      ],
+      "downloadUrl": "https://tivixiaomi.vn/TVstore/truyenhinh/notube.apk",
+      "packageName": "com.ycngmn.notubetv",
+      "category_name": "Youtube"
+    },
+    {
+      "id": "yotube6",
+      "title": "SmartyouTubeTV",
+      "icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIe-DYQfz1AqwkaiDaKLcgo7jU57UeI2mkOQ&s",
+      "rating": 4.8,
+      "version": "6.17.739",
+      "description": "xem youtube không quảng cáo",
+      "screenshots": [
+        "https://image.winudf.com/v2/user/admin/YWRtaW5fNS5wbmdfMTY2MjAyMDA2NDM3OQ/screen-4.jpg?h=200&fakeurl=1&type=.jpg"
+      ],
+      "downloadUrl": "https://tivixiaomi.vn/TVstore/truyenhinh/smartyoutubetv.apk",
+      "packageName": "com.liskovsoft.videomanager",
+      "category_name": "Youtube"
+    },
+    {
+      "id": "yotube7",
+      "title": "Youtube TV (mod)",
+      "icon": "https://giaiphapvanphong.vn/Image/Picture/New/kenh-youtube.jpg",
+      "rating": 4.9,
+      "version": "1.0.8",
+      "description": "tizentube loại bỏ quảng cáo.",
+      "screenshots": [
+        "https://upandclear.org/wp-content/uploads/2025/10/tizentube4.jpg"
+      ],
+      "downloadUrl": "https://github.com/rupanh123-phap/928394040393939339393939949430038458575758933030202020202848485858585949400485858585859402.github.io/releases/download/V1.0.0/tizentubemod.apk",
+      "packageName": "com.liskovsoft.smarttubetv.beta",
+      "category_name": "Youtube"
+    },
+    {
+      "id": "yotube11",
+      "title": "Youtube ( Gốc )",
+      "icon": "https://raw.githubusercontent.com/tvstore012026/Anh/main/yuotube%20icon.jpg",
+      "rating": 4.8,
+      "version": "2.02.14",
+      "description": "Ứng dụng chính thức của google có quảng cáo.",
+      "screenshots": [
+        "https://raw.githubusercontent.com/tvstore012026/Anh/main/Youtube.png"
+      ],
+      "downloadUrl": "https://github.com/tvstore012026/tvstore/releases/download/1.0.0/Youtube.TV.v.2.02.14.apk",
+      "packageName": "com.google.android.youtube.tv",
+      "category_name": "Youtube"
+    },
+    {
+      "id": "yotube12",
+      "title": "TikTok Lite",
+      "icon": "https://thuvienvector.vn/wp-content/uploads/2025/09/TikTok-Logo-png.jpg",
+      "rating": 4,
+      "version": "30.48",
+      "description": "Bản TikTok lite trên mobile lên phải dùng chuột",
+      "screenshots": [
+        "https://cdn11.dienmaycholon.vn/filewebdmclnew/public/userupload/files/cach-tai-tiktok-tren-tivi-3.png"
+      ],
+      "downloadUrl": "https://tivixiaomi.vn/TVstore/truyenhinh/tiktoklite.apk",
+      "packageName": "com.zhiliaoapp.musically.go",
+      "category_name": "Youtube"
+    },
+    {
+      "id": "yotube13",
+      "title": "Galaxy Play",
+      "icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNRO0QLPJaIGurh9pCHnpnBAy7Hn6YUR-alw&s",
+      "rating": 4,
+      "version": "3.10.21",
+      "description": "Galaxy Play là dịch vụ online số 1 việt nam",
+      "screenshots": [
+        "https://cdn2.fptshop.com.vn/unsafe/800x0/tai_khoan_Galaxy_Play_mien_phi_hinh_2_23a67b9f15.jpg"
+      ],
+      "downloadUrl": "https://tivixiaomi.vn/TVstore/truyenhinh/tiktoklite.apk",
+      "packageName": "movies.fimplus.vn.andtv",
+      "category_name": "Youtube"
+    },{
+      "id": "yotube13",
+      "title": "NewPiPe",
+      "icon": "https://repository-images.githubusercontent.com/746093504/9a6136fe-0541-4e3f-8fe2-559f29bdb04c",
+      "rating": 4,
+      "version": "3.10.21",
+      "description": "Youtube không quảng cáo FHD",
+      "screenshots": [
+        "https://f-droid.org/repo/org.schabi.newpipe/en-US/tenInchScreenshots/shot_11.png"
+      ],
+      "downloadUrl": "https://github.com/rupanh123-phap/928394040393939339393939949430038458575758933030202020202848485858585949400485858585859402.github.io/releases/download/V1.0.0/newpipe.apk",
+      "packageName": "org.schabi.newpipe",
+      "category_name": "Youtube"
+    }
+    ],
+  "Xem Phim": [
+    {
+      "id": "Phim0",
+      "title": "Phim Nè",
+      "icon": "https://raw.githubusercontent.com/tvstore012026/Anh/main/phimne.jpg",
+      "rating": 4.8,
+      "version": "4.1.4",
+      "description": "xem Phim.Kênh giải trí tổng hợp nhiều nguồn.",
+      "screenshots": [
+        "https://news.vio.vn/wp-content/uploads/2024/03/web-xem-phim-11.png"
+      ],
+      "downloadUrl": "https://github.com/rupanh123-phap/928394040393939339393939949430038458575758933030202020202848485858585949400485858585859402.github.io/releases/download/V1.0.0/rophimf.apk",
+      "packageName": "com.jakendis.streambox",
+      "category_name": "Xem Phim"
+    },
+    {
+      "id": "Phim1",
+      "title": "Rổ Phim FAKE",
+      "icon": "https://cdn2.tuoitre.vn/zoom/700_700/471584752817336320/2026/2/5/627127918-1490429379111594-9220538697976330302-n-copy-1770265011500300512150-400-0-1172-1475-crop-17702650475791941049916.jpg",
+      "rating": 4.3,
+      "version": "1.0.1",
+      "description": "xem Phim.Kênh giải trí tổng hợp nhiều nguồn.",
+      "screenshots": [
+        "https://cdn2.tuoitre.vn/thumb_w/480/471584752817336320/2026/2/5/rophim1-17702652470282117282363.jpg"
+      ],
+      "downloadUrl": "https://image.chillcdn.top/file/cm9waGltbQ/app/update/rophimm.apk",
+      "packageName": "net.rophimm.nqt",
+      "category_name": "Xem Phim"
+    },
+    {
+      "id": "Phim2",
+      "title": "Phim 4K",
+      "icon": "https://img.freepik.com/vector-gratis/diseno-icona-insignia-resolucion-pantalla-4k-ultra-hd-dorada_1017-54543.jpg",
+      "rating": 4.3,
+      "version": "4.6.0",
+      "description": "Kênh giải trí tổng hợp nhiều nguồn.",
+      "screenshots": [
+        "https://gucongnghe.com/wp-content/uploads/2020/06/xem-video-netflix-4k.jpg"
+      ],
+      "downloadUrl": "https://phim4k.xyz/downloads/androidtv",
+      "packageName": "com.lagradost.cloudstream3",
+      "category_name": "Xem Phim"
+    },
+    {
+      "id": "phim3",
+      "title": "Vua Giải Trí",
+      "icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqFJTkQm4NAsmSMVFhCG7qVjOSJoBGvUcxgwlgteIkSn5T447B49eYWw1f&s=10",
+      "rating": 4.9,
+      "version": "1.1.8",
+      "description": "Kênh giải trí tổng hợp nhiều nguồn.",
+      "screenshots": [
+        "https://raw.githubusercontent.com/tvstore012026/truyenhinh/main/co%20thethao.png"
+      ],
+      "downloadUrl": "https://github.com/manhnv699/vuagiaitri/releases/download/tv-app-armeabi-v7a/tv-app-armeabi-v7a.apk",
+      "packageName": "com.kt.apps.media.xemtv.beta",
+      "category_name": "Xem Phim"
+    },
+    {
+      "id": "phim4",
+      "title": "Rạp Phim TV",
+      "icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJoOihXfGL3UGjPPcN72PamaIIE_P-ZtTPvcNxm5K3yCTd17e4V2UVywk&s=10",
+      "rating": 4.8,
+      "version": "1.0.5",
+      "description": "Kênh giải trí tổng hợp nhiều nguồn.",
+      "screenshots": [
+        "https://cdn.tgdd.vn/Files/2016/10/27/905608/7-ung-dung-xem-phim-online-hap-dan-tren-smart-tivi-15.jpg"
+      ],
+      "downloadUrl": "https://github.com/rupanh123-phap/928394040393939339393939949430038458575758933030202020202848485858585949400485858585859402.github.io/releases/download/V1.0.0/rapphimtv.apk",
+      "packageName": "com.kt.apps.media.xemtv.beta",
+      "category_name": "Xem Phim"
+    },
+    {
+      "id": "phim5",
+      "title": "Phim 30",
+      "icon": "https://img.pikbest.com/origin/10/49/11/85tpIkbEsTcjq.png!sw800",
+      "rating": 4.2,
+      "version": "1.0.9",
+      "description": "Kênh giải trí tổng hợp nhiều nguồn.",
+      "screenshots": [
+        "https://media-cdn-v2.laodong.vn/storage/newsportal/2019/9/18/755388/Netflix-01.png?w=660"
+      ],
+      "downloadUrl": "https://github.com/rupanh123-phap/928394040393939339393939949430038458575758933030202020202848485858585949400485858585859402.github.io/releases/download/V1.0.0/phim30.apk",
+      "packageName": "com.kt.apps.media.xemtv.beta",
+      "category_name": "Xem Phim"
+    },
+    {
+      "id": "phim6",
+      "title": "Xem14",
+      "icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT21DW-fpKMDx-Doc5Ews6snONwWGT5VenqV1EertcmYNXMj8i9FLecCXOd&s=10",
+      "rating": 4.2,
+      "version": "1.0.1",
+      "description": "Kênh giải trí tổng hợp nhiều nguồn..",
+      "screenshots": [
+        "https://cdn2.fptshop.com.vn/unsafe/Uploads/images/tin-tuc/174877/Originals/web-tai-phim-4.jpg"
+      ],
+      "downloadUrl": "https://github.com/rupanh123-phap/928394040393939339393939949430038458575758933030202020202848485858585949400485858585859402.github.io/releases/download/V1.0.0/xem14.apk",
+      "packageName": "com.google.android.youtube.tv",
+      "category_name": "Xem Phim"
+    },
+    {
+      "id": "phim7",
+      "title": "Hiếu Gà Cinema",
+      "icon": "https://www.hieugaphim.fun/logo.png",
+      "rating": 4.3,
+      "version": "1.0.0",
+      "description": "Kênh giải trí tổng hợp nhiều nguồn.",
+      "screenshots": [
+        "https://blog.dktcdn.net/files/web-tai-phim-netflix-com.jpg"
+      ],
+      "downloadUrl": "https://github.com/rupanh123-phap/928394040393939339393939949430038458575758933030202020202848485858585949400485858585859402.github.io/releases/download/V1.0.0/hieuga.apk",
+      "packageName": "com.teamsmart.videomanager.tv",
+      "category_name": "Xem Phim"
+    },
+    {
+      "id": "phim8",
+      "title": "NVC Movie TV",
+      "icon": "https://toppng.com/uploads/preview/play-movies-icon-android-lollipop-11530957374aecomtjqey.png",
+      "rating": 4.9,
+      "version": "1.42",
+      "description": "Kênh giải trí tổng hợp nhiều nguồn....",
+      "screenshots": [
+        "https://thanhnien.mediacdn.vn/Uploaded/trandong/2015_09_30/phim-lau-d_LYTL.jpg?width=500"
+      ],
+      "downloadUrl": "https://github.com/rupanh123-phap/928394040393939339393939949430038458575758933030202020202848485858585949400485858585859402.github.io/releases/download/V1.0.0/nvc.apk",
+      "packageName": "com.kt.apps.media.xemtv.beta",
+      "category_name": "Xem Phim"
+    },
+    {
+      "id": "phim9",
+      "title": "CloudStream (MOD)",
+      "icon": "https://raw.githubusercontent.com/rupanh123-phap/928394040393939339393939949430038458575758933030202020202848485858585949400485858585859402.github.io/refs/heads/main/cs3.jpg",
+      "rating": 4.8,
+      "version": "4.6.0",
+      "description": "Kênh giải trí tổng hợp nhiều nguồn..",
+      "screenshots": [
+        "https://cloudstream-apk.com/wp-content/uploads/2025/04/Select-Content-1024x576.webp"
+      ],
+      "downloadUrl": "https://github.com/rupanh123-phap/928394040393939339393939949430038458575758933030202020202848485858585949400485858585859402.github.io/releases/download/V1.0.0/clst.apk",
+      "packageName": "com.kt.apps.media.xemtv.beta",
+      "category_name": "Xem Phim"
+    },
+    {
+      "id": "phim10",
+      "title": "PCRTV",
+      "icon": "https://cdn-icons-png.flaticon.com/512/4193/4193268.png",
+      "rating": 4.2,
+      "version": "16.01",
+      "description": "Kênh giải trí tổng hợp nhiều nguồn.",
+      "screenshots": [
+        "https://thanhnien.mediacdn.vn/Uploaded/trandong/2015_09_30/phim-lau-d_LYTL.jpg?width=500"
+      ],
+      "downloadUrl": "https://github.com/rupanh123-phap/928394040393939339393939949430038458575758933030202020202848485858585949400485858585859402.github.io/releases/download/V1.0.0/pcr.apk",
+      "packageName": "com.kt.apps.media.xemtv.beta",
+      "category_name": "Xem Phim"
+    }
+    ],
+  "Thể Thao": [
+    {
+      "id": "th1",
+      "title": "MonPlayerTV",
+      "icon": "https://raw.githubusercontent.com/tvstore012026/Anh/main/Monplayer%20icon.png",
+      "rating": 4.6,
+      "version": "2.0.0",
+      "description": "Ứng dụng xem thể thao mượt mà.",
+      "screenshots": [
+        "https://raw.githubusercontent.com/tvstore012026/Anh/main/monplayer.jpg"
+      ],
+      "downloadUrl": "https://github.com/tvstore012026/AppTV/raw/refs/heads/main/monplayer.apk",
+      "packageName": "org.monplayer.mpapp",
+      "category_name": "Thể Thao"
+    },
+    {
+      "id": "th2",
+      "title": "SportsTV",
+      "icon": "https://raw.githubusercontent.com/tvstore012026/Anh/main/sports%20icon.png",
+      "rating": 4.6,
+      "version": "5.2.3",
+      "description": "Nội dung thể thao từ các nguồn bên ngoài.",
+      "screenshots": [
+        "https://raw.githubusercontent.com/tvstore012026/Anh/main/sports.png"
+      ],
+      "downloadUrl": "https://github.com/rupanh123-phap/928394040393939339393939949430038458575758933030202020202848485858585949400485858585859402.github.io/releases/download/V1.0.0/sporstv.apk",
+      "packageName": "com.sports.tv",
+      "category_name": "Thể Thao"
+    },
+    {
+      "id": "th3",
+      "title": "Vừa Mới Thấy",
+      "icon": "https://raw.githubusercontent.com/rupanh123-phap/928394040393939339393939949430038458575758933030202020202848485858585949400485858585859402.github.io/refs/heads/main/vuamoithay.png",
+      "rating": 4.6,
+      "version": "3.0.0",
+      "description": "Ứng dụng xem thể thao mượt mà.",
+      "screenshots": [
+        "https://raw.githubusercontent.com/tvstore012026/Anh/main/vmt.jpg"
+      ],
+      "downloadUrl": "https://github.com/viktorwawick/apk/releases/download/1.0/vmtmod2.apk",
+      "packageName": "com.truyenhinh.vmt",
+      "category_name": "Thể Thao"
+    },
+    {
+      "id": "th4",
+      "title": "Cricfy TV",
+      "icon": "https://cricfys.com/wp-content/uploads/cricfy-tv.webp",
+      "rating": 4.6,
+      "version": "5.1.1",
+      "description": "Nội dung thể thao từ các nguồn bên ngoài.",
+      "screenshots": [
+        "https://cricfys.com/wp-content/uploads/cricfy-tv-official.webp"
+      ],
+      "downloadUrl": "https://github.com/rupanh123-phap/928394040393939339393939949430038458575758933030202020202848485858585949400485858585859402.github.io/releases/download/V1.0.0/cricfy.apk",
+      "packageName": "com.cricfy.tv",
+      "category_name": "Thể Thao"
+    },
+    {
+      "id": "th5",
+      "title": "SportzX",
+      "icon": "https://apktodo.io/uploads/2025/9/sportzx-football-live-tv-hd-icon.jpg",
+      "rating": 4.6,
+      "version": "1.9",
+      "description": "Ứng dụng xem thể thao mượt mà.",
+      "screenshots": [
+        "https://troypoint.com/wp-content/uploads/2025/10/sportzx-live-sports-app.jpg"
+      ],
+      "downloadUrl": "https://github.com/rupanh123-phap/928394040393939339393939949430038458575758933030202020202848485858585949400485858585859402.github.io/releases/download/V1.0.0/sportzx.apk",
+      "packageName": "com.sportzx.live",
+      "category_name": "Thể Thao"
+    },
+    {
+      "id": "th6",
+      "title": "GetOut TV",
+      "icon": "https://images.squarespace-cdn.com/content/v1/670d98b0a7fb7e4efc9210f3/8cab6f67-ceab-4aab-be22-8f8ccd8e7b8b/GetOut_Day_Logo_Large.png",
+      "rating": 4.8,
+      "version": "2.02.14",
+      "description": "Ứng dụng chính thức của google có quảng cáo.",
+      "screenshots": [
+        "https://raw.githubusercontent.com/tvstore012026/Anh/main/getout.jpg"
+      ],
+      "downloadUrl": "https://github.com/tvstore012026/AppTV/raw/refs/heads/main/getout.apk",
+      "packageName": "com.linor.vn.getout",
+      "category_name": "Thể Thao"
+    },
+    {
+      "id": "th7",
+      "title": "RBTV +",
+      "icon": "https://play-lh.googleusercontent.com/-q5lFRsHgU7T6jFE9XLzFJMlm1in2NoF9ibscFriWYu1HdoE5d6aOmJRtAKFomyd6Tjr",
+      "rating": 4,
+      "version": "30.48",
+      "description": "Smarttube loại bỏ quảng cáo.",
+      "screenshots": [
+        "https://raw.githubusercontent.com/tvstore012026/Anh/main/rbttv.jpg"
+      ],
+      "downloadUrl": "https://github.com/rupanh123-phap/928394040393939339393939949430038458575758933030202020202848485858585949400485858585859402.github.io/releases/download/V1.0.0/rbtv.apk",
+      "packageName": "com.rblive.tv",
+      "category_name": "Thể Thao"
+    }
+    ],
+  "Trình Duyệt Website": [
+    {
+      "id": "tdw1",
+      "title": "Chrome TV",
+      "icon": "https://cdn2.fptshop.com.vn/small/tai_chrome_ve_may_tinh_1_ba8d39880e.jpg",
+      "rating": 5,
+      "version": "57.0.2987",
+      "description": "Chrome giúp bạn làm mọi việc có thể trên web. Hãy chọn Chrome – trình duyệt tốc độ cao và bảo mật của Google.",
+      "screenshots": [
+        "https://cdn2.fptshop.com.vn/unsafe/1920x0/filters:format(webp):quality(75)/2023_11_21_638361644395560442_bia.jpg"
+      ],
+      "downloadUrl": "...",
+      "packageName": "com.adnroid.chrome",
+      "category_name": "Trình Duyệt"
+    },
+    {
+      "id": "tdw2",
+      "title": "Cốc Cốc TV Life",
+      "icon": "https://play-lh.googleusercontent.com/WIn2r7aFH7DCOEoGDxuYLQB-rnW5wghnS6Ty5KTCgTxzP3rn3KMmimNXd5sBBpMNTy4",
+      "rating": 5,
+      "version": "1.6",
+      "description": "Cốc Cốc là trình duyệt Internet lướt web nhanh nhẹ. Trình duyệt được tích hợp nhiều tính năng như chặn quảng cáo, tải video, tải nhạc, tải phim nghe nhạc tắt màn hình, xem video hình trong hình (PiP)….",
+      "screenshots": [
+        "https://genk.mediacdn.vn/zoom/700_438/2017/a1-1487239138497.jpg"
+      ],
+      "downloadUrl": "...",
+      "packageName": "com.adnroid.chrome",
+      "category_name": "Trình Duyệt"
+    },
+    {
+      "id": "tdw3",
+      "title": "TV Bro",
+      "icon": "https://img.utdstc.com/icon/20c/e7f/20ce7ff8e6713245f70ce6dcbdfd72429eca2d6e4a0bbabc1e0fb0e6343fe6dd:200",
+      "rating": 5,
+      "version": "1.8.6",
+      "description": "Trình duyệt web được tối ưu hóa để sử dụng với điều khiển TV..",
+      "screenshots": [
+        "https://play-lh.googleusercontent.com/qIiIyPtxKc903sdu1fgzU2UgH4Ju3ITY1ViYEu6zy2I3rdS8Q9t64uumt5ZmfZYXKg4=w1052-h592-rw"
+      ],
+      "downloadUrl": "...",
+      "packageName": "com.adnroid.chrome",
+      "category_name": "Trình Duyệt"
+    },
+    {
+      "id": "tdw4",
+      "title": "FireFox TV",
+      "icon": "https://phongvu.vn/cong-nghe/wp-content/uploads/2019/06/Firefox-on-Fire-TV-announcement-1400x770-e1559721707627.png",
+      "rating": 5,
+      "version": "4.7.1.Phap",
+      "description": "Chrome giúp bạn làm mọi việc có thể trên web. Hãy chọn Chrome – trình duyệt tốc độ cao và bảo mật của Google.",
+      "screenshots": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_OFT1a6Ur0pQ--ZaDtuz9Hciv649xy2AHgQ&s"
+      ],
+      "downloadUrl": "...",
+      "packageName": "com.adnroid.chrome",
+      "category_name": "Trình Duyệt"
+    },
+    {
+      "id": "tdw5",
+      "title": "Kiwi Browser_Fast",
+      "icon": "https://thekiwibrowser.com/wp-content/uploads/2025/08/id9Kkvi6ss_1754164769991-e1758793805355.webp",
+      "rating": 5,
+      "version": "mới nhất",
+      "description": "Chrome giúp bạn làm mọi việc có thể trên web. Hãy chọn Chrome – trình duyệt tốc độ cao và bảo mật của Google.",
+      "screenshots": [
+        "https://cdn-icon.bluestacks.com/UDwbXY3iYu8lJml0hINH4J7E5XXpDtK94l9huFY9GjsQY6bPe_R-x4B11C1uaYYrbTU=s0"
+      ],
+      "downloadUrl": "...",
+      "packageName": "com.adnroid.chrome",
+      "category_name": "Trình Duyệt"
+    }
+    ],
+  "Tìm Kiếm Giọng Nói - Bàn Phím": [
+    {
+      "id": "tk1",
+      "title": "Google TV",
+      "icon": "https://play-lh.googleusercontent.com/Eh-N9HKWJgQ4Oa5wmhaE5RbHkB3m3Ud9tsW6saUHis05BL7Xnpubi5iamR5lDKd-Ew",
+      "rating": 5,
+      "version": "7.9.2023",
+      "description": "Tìm kiếm giọng nói cho tivi xiaomi.",
+      "screenshots": [
+        "https://images2.thanhnien.vn/528068263637045248/2025/4/16/2-17447702431381645539444.jpg"
+      ],
+      "downloadUrl": "https://tivixiaomi.vn/TVstore/truyenhinh/googletv.apk",
+      "packageName": "com.google.android.katniss",
+      "category_name": "Giọng Nói"
+    },
+    {
+      "id": "tk2",
+      "title": "KiKi",
+      "icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLZaAmWTutBwqB8Y3rtKLefg52EQsCFV-AeQ&s",
+      "rating": 5,
+      "version": "24.01",
+      "description": "Tìm kiếm giọng nói kiki.",
+      "screenshots": [
+        "https://kiki.zalo.ai/public/img/share-kiki.png"
+      ],
+      "downloadUrl": "https://tivixiaomi.vn/TVstore/truyenhinh/kiki.apk",
+      "packageName": "ai.zalo.kiki.tv",
+      "category_name": "Giọng Nói"
+    },
+    {
+      "id": "tk3",
+      "title": "SupperVoice(ADB)",
+      "icon": "https://tivixiaomi.vn/TVstore/truyenhinh/spvoidlogo.png",
+      "rating": 5,
+      "version": "2.5.3",
+      "description": "Tìm kiếm giọng nói ,gọi kênh truyền hình, youtube, tìm phim ... Lưu ý phải gỡ lỗi usb (ADB), có hướng dẫn khi cài",
+      "screenshots": [
+        "https://tivixiaomi.vn/TVstore/truyenhinh/spvoid.png"
+      ],
+      "downloadUrl": "https://tivixiaomi.vn/TVstore/truyenhinh/spvoid.apk",
+      "packageName": "com.linor.vn.supperVoice",
+      "category_name": "Giọng Nói"
+    },
+    {
+      "id": "tk4",
+      "title": "MapVoid",
+      "icon": "https://tivixiaomi.vn/TVstore/truyenhinh/mapvoidlogo.png",
+      "rating": 5,
+      "version": "2.1.0",
+      "description": "Tìm kiếm giọng nói ,gọi kênh truyền hình, youtube, tìm phim ... Lưu ý không cần gỡ lỗi usb (ADB) , có hướng dẫn khi cài",
+      "screenshots": [
+        "https://tivixiaomi.vn/TVstore/truyenhinh/Q8.jpg"
+      ],
+      "downloadUrl": "https://tivixiaomi.vn/TVstore/truyenhinh/mapvoid.apk",
+      "packageName": "com.linor.vn.mapVoice",
+      "category_name": "Giọng Nói"
+    },
+    {
+      "id": "tk5",
+      "title": "LeankeyBoard",
+      "icon": "https://play-lh.googleusercontent.com/64lBNTOitObo3YW5estD6CBo1LMARegXfk3AY2L6nVjCPCC21YEZ5uYsRvJjuNfIEwA",
+      "rating": 5,
+      "version": "6.1.20",
+      "description": "LeanKey Keyboard là ứng dụng bàn phím gõ tiếng Việt phổ biến nhất cho Android",
+      "screenshots": [
+        "https://play-lh.googleusercontent.com/4ppGZnzv6qCikMhvc3cOfzBrIr84eb1k0cia2UEKcSVuSKW2uSGml8SvtijHW2KR4cM=w526-h296-rw"
+      ],
+      "downloadUrl": "https://github.com/rupanh123-phap/928394040393939339393939949430038458575758933030202020202848485858585949400485858585859402.github.io/releases/download/V1.0.0/leankey.apk",
+      "packageName": "org.liskovsoft.androidtv.rukeyboard",
+      "category_name": "Giọng Nói"
+    },
+    {
+      "id": "tk6",
+      "title": "Bàn Phím Android TV",
+      "icon": "https://developer.android.com/static/training/tv/images/atv-keyboard-password.png?hl=vi",
+      "rating": 5,
+      "version": "6.1.20",
+      "description": "LeanKey Keyboard là ứng dụng bàn phím gõ tiếng Việt phổ biến nhất cho Android",
+      "screenshots": [
+        "https://raw.githubusercontent.com/rupanh123-phap/928394040393939339393939949430038458575758933030202020202848485858585949400485858585859402.github.io/refs/heads/main/kbatv.png"
+      ],
+      "downloadUrl": "https://github.com/rupanh123-phap/928394040393939339393939949430038458575758933030202020202848485858585949400485858585859402.github.io/releases/download/V1.0.0/bpatv.apk",
+      "packageName": "com.ndcsolution.androidtv.leankeykeyboard",
+      "category_name": "Giọng Nói"
+    }
+  ],
+  "Quản Lý File - Bluetooth": [
+    {
+      "id": "f1",
+      "title": "AnExplorer - Quản Lý Files",
+      "icon": "https://play-lh.googleusercontent.com/jpxPmyOm_o2XYHSH4GCbgmpl6wbciOksXgivWcrEqVbn41arsre6q0voLKY_7UIWpjE=w480-h960-rw",
+      "rating": 4.9,
+      "version": "5.5.1",
+      "description": "AnExplorer File Manager là ứng dụng quản lý tệp đơn giản, nhanh chóng, hiệu quả và mạnh mẽ, với giao diện trực quan, gọn gàng.",
+      "screenshots": [
+        "https://play-lh.googleusercontent.com/9yv4hztWY4_27TEj2KN8dTuhLhn_pLLCfsHHhcovMqSVwsfvmKd6GvU0f9_xrrtx-ti9MLoRdrtHF8b06fXp=w1052-h592-rw"
+      ],
+      "downloadUrl": "https://tivixiaomi.vn/TVstore/truyenhinh/anexplorer.apk",
+      "packageName": "dev.dworks.apps.anexplorer",
+      "category_name": "Quản Lý File"
+    },
+    {
+      "id": "f2",
+      "title": "Xplorer",
+      "icon": "https://play-lh.googleusercontent.com/kkd0TsVGQ0SFAM7T-SWQoQAhtZXFJlK1LRJBN6qisUeSQHnCBlWmP2ZhgOtPRGZ75hQ",
+      "rating": 4.8,
+      "version": "4.6.2",
+      "description": "Xplorer File Manager là ứng dụng quản lý tệp đơn giản, nhanh chóng, hiệu quả và mạnh mẽ, với giao diện trực quan, gọn gàng.",
+      "screenshots": [
+        "https://play-lh.googleusercontent.com/kIuAZIv-U7nSYnDYjWfHQL3myD9T29zt_INdo2B9-OnETSRTnebkUZ_vk2Xwok9Uw3WB=w5120-h2880-rw"
+      ],
+      "downloadUrl": "https://github.com/rupanh123-phap/928394040393939339393939949430038458575758933030202020202848485858585949400485858585859402.github.io/releases/download/V1.0.0/xplorer.apk",
+      "packageName": "com.lonelycatgames.Xplore",
+      "category_name": "Quản Lý File"
+    },
+    {
+      "id": "f3",
+      "title": "Send Files To TV",
+      "icon": "https://downloadr2.apkmirror.com/wp-content/uploads/2020/06/68/5ee326e885c36.png",
+      "rating": 5,
+      "version": "1.4.1",
+      "description": "send to tivi là ứng dụng quản lý tệp đơn giản, nhanh chóng, hiệu quả và mạnh mẽ, với giao diện trực quan, gọn gàng.",
+      "screenshots": [
+        "https://play-lh.googleusercontent.com/5jidK7vSrNRWivtS6ZV9tw4xueeWuan-gZbmuc_kCwzMAr1wmm26EEru68WfzETnrA=w1052-h592-rw"
+      ],
+      "downloadUrl": "https://github.com/rupanh123-phap/928394040393939339393939949430038458575758933030202020202848485858585949400485858585859402.github.io/releases/download/V1.0.0/rsfile.apk",
+      "packageName": "com.yablio.sendfilestotv",
+      "category_name": "Quản Lý File"
+    },
+    {
+      "id": "f4",
+      "title": "Quản Lý Tệp",
+      "icon": "https://play-lh.googleusercontent.com/wWmzs0aZkC9fgkbLl5LTtGwfZfXYwflG6-k_tsTZ8licgM04F20TdLWqjQkEN2xaQ10=w480-h960-rw",
+      "rating": 4.3,
+      "version": "4.6.2",
+      "description": "Xplorer File Manager là ứng dụng quản lý tệp đơn giản, nhanh chóng, hiệu quả và mạnh mẽ, với giao diện trực quan, gọn gàng.",
+      "screenshots": [
+        "https://securitybox.vn/wp-content/uploads/2019/01/th%C6%B0-m%E1%BB%A5c-es-1024x576.jpg"
+      ],
+      "downloadUrl": "https://github.com/rupanh123-phap/928394040393939339393939949430038458575758933030202020202848485858585949400485858585859402.github.io/releases/download/V1.0.0/qlt.apk",
+      "packageName": "com.xiaobaifile.phaptx5",
+      "category_name": "Quản Lý File"
+    },
+    {
+      "id": "f5",
+      "title": "Quét Bluetooth",
+      "icon": "https://raw.githubusercontent.com/rupanh123-phap/928394040393939339393939949430038458575758933030202020202848485858585949400485858585859402.github.io/refs/heads/main/timblt.png",
+      "rating": 4.3,
+      "version": "4.6.2",
+      "description": "Xplorer File Manager là ứng dụng quản lý tệp đơn giản, nhanh chóng, hiệu quả và mạnh mẽ, với giao diện trực quan, gọn gàng.",
+      "screenshots": [
+        "https://static.nhanhavui.com.vn/Content/Uploads/files/tivi-1/cach-ket-noi-bluetooth-voi-tivi-sony.jpg"
+      ],
+      "downloadUrl": "https://tivixiaomi.vn/TVstore/truyenhinh/timbluetooth.apk",
+      "packageName": "com.zdworksinc.bluetoothtvscanner",
+      "category_name": "Quản Lý File"
+    },
+    {
+      "id": "f6",
+      "title": "Bluetooth Remote & Mouse",
+      "icon": "https://play-lh.googleusercontent.com/oECx2DxYZsIGSoZ9OIBWe3wIy-aPNc0myLsskEEggX0E41AO0VF43yFXFg49vrrkjiAJ=w240-h480-rw",
+      "rating": 4.3,
+      "version": "4.6.2",
+      "description": "Xplorer File Manager là ứng dụng quản lý tệp đơn giản, nhanh chóng, hiệu quả và mạnh mẽ, với giao diện trực quan, gọn gàng.",
+      "screenshots": [
+        "https://play-lh.googleusercontent.com/oECx2DxYZsIGSoZ9OIBWe3wIy-aPNc0myLsskEEggX0E41AO0VF43yFXFg49vrrkjiAJ=w240-h480-rw"
+      ],
+      "downloadUrl": "https://github.com/rupanh123-phap/928394040393939339393939949430038458575758933030202020202848485858585949400485858585859402.github.io/releases/download/V1.0.0/bltrm.apk",
+      "packageName": "com.app.bluetoothremote",
+      "category_name": "Quản Lý File"
+    }
+    ],
+    "Phần mềm VPN - Network": [
+    {
+      "id": "vpn1",
+      "title": "VIETNAM VPN",
+      "icon": "https://raw.githubusercontent.com/tvstore012026/Anh/main/VPN%20icon.png",
+      "rating": 5,
+      "version": "4.6.2",
+      "description": "Bảo mật kết nối và ẩn IP.",
+      "screenshots": [
+        "https://raw.githubusercontent.com/tvstore012026/Anh/main/vietnam.png"
+      ],
+      "downloadUrl": "https://github.com/rupanh123-phap/928394040393939339393939949430038458575758933030202020202848485858585949400485858585859402.github.io/releases/download/V1.0.0/vpnvn.apk",
+      "packageName": "free.vpnvietnam.unlimited.secure.turbo.unblock.proxy",
+      "category_name": "Phần Mềm VPN"
+    },
+    {
+      "id": "vpn2",
+      "title": "1.1.1.1",
+      "icon": "https://raw.githubusercontent.com/tvstore012026/Anh/main/1111%20icon.png",
+      "rating": 5,
+      "version": "6.33",
+      "description": "Dịch vụ VPN miễn phí từ Cloudflare.",
+      "screenshots": [
+        "https://raw.githubusercontent.com/tvstore012026/Anh/main/1111.png"
+      ],
+      "downloadUrl": "https://github.com/rupanh123-phap/928394040393939339393939949430038458575758933030202020202848485858585949400485858585859402.github.io/releases/download/V1.0.0/1111.apk",
+      "packageName": "com.cloudflare.onedotonedotonedotone",
+      "category_name": "Phần Mềm VPN"
+    },
+    {
+      "id": "vpn3",
+      "title": "Adguard (MOD)",
+      "icon": "https://muaga.me/wp-content/uploads/2020/05/adguard-premium-vinh-vien.png",
+      "rating": 5,
+      "version": "Mới nhất",
+      "description": "Dịch vụ VPN miễn phí từ Cloudflare.",
+      "screenshots": [
+        "https://muaga.me/wp-content/uploads/2020/05/adguard-premium-vinh-vien.png"
+      ],
+      "downloadUrl": "https://github.com/rupanh123-phap/928394040393939339393939949430038458575758933030202020202848485858585949400485858585859402.github.io/releases/download/V1.0.0/adguard.apk",
+      "packageName": "com.adguard.android",
+      "category_name": "Phần Mềm VPN"
+    },
+    {
+      "id": "vpn4",
+      "title": "UltraSurf VPN",
+      "icon": "https://play-lh.googleusercontent.com/QeDg46ts4oHQxpx03egAQ9F9PLTbtKQUh2LObXrylexydDHje6UKKQbw3eo6F0HlbWMT",
+      "rating": 5,
+      "version": "Mới nhất",
+      "description": "Dịch vụ VPN miễn phí từ Cloudflare.",
+      "screenshots": [
+        "https://play-lh.googleusercontent.com/QeDg46ts4oHQxpx03egAQ9F9PLTbtKQUh2LObXrylexydDHje6UKKQbw3eo6F0HlbWMT"
+      ],
+      "downloadUrl": "https://github.com/rupanh123-phap/928394040393939339393939949430038458575758933030202020202848485858585949400485858585859402.github.io/releases/download/V1.0.0/ultrasurf.apk",
+      "packageName": "us.ultrasurf.mobile.ultrasurf",
+      "category_name": "Phần Mềm VPN"
+    },
+    {
+      "id": "vpn5",
+      "title": "Octohide VPN",
+      "icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYEEr5ttyzoiAX2OsOcSVkXc_tyBNMnPMs6w&s",
+      "rating": 5,
+      "version": "Mới nhất",
+      "description": "Dịch vụ VPN miễn phí từ Cloudflare.",
+      "screenshots": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYEEr5ttyzoiAX2OsOcSVkXc_tyBNMnPMs6w&s"
+      ],
+      "downloadUrl": "https://github.com/rupanh123-phap/928394040393939339393939949430038458575758933030202020202848485858585949400485858585859402.github.io/releases/download/V1.0.0/octohide.apk",
+      "packageName": "octohide.vpn",
+      "category_name": "Phần Mềm VPN"
+    },
+    {
+      "id": "vpn6",
+      "title": "KIWI VPN",
+      "icon": "https://play-lh.googleusercontent.com/LZmCd9GyzfB7jJKdaDfViz4JYUVZByB5qrCcCergciP1L6LUrIDNDRZ6HY3Q25NmG4KG=w240-h480-rw",
+      "rating": 5,
+      "version": "Mới nhất",
+      "description": "Dịch vụ VPN miễn phí từ Cloudflare.",
+      "screenshots": [
+        "https://play-lh.googleusercontent.com/LZmCd9GyzfB7jJKdaDfViz4JYUVZByB5qrCcCergciP1L6LUrIDNDRZ6HY3Q25NmG4KG=w240-h480-rw"
+      ],
+      "downloadUrl": "https://github.com/rupanh123-phap/928394040393939339393939949430038458575758933030202020202848485858585949400485858585859402.github.io/releases/download/V1.0.0/kiwi.apk",
+      "packageName": "secure.unblock.unlimited.proxy.s",
+      "category_name": "Phần Mềm VPN"
+    }
+  ],
+  "Phần Mền Camera": [
+      {
+        "id": "cmr1",
+        "title": "Ezviz TV",
+        "icon": "https://raw.githubusercontent.com/tvstore012026/Anh/main/ezviz1.png",
+        "rating": 5,
+        "version": "1.1.1.0408",
+        "description": "Ứng dụng EZVIZ được thiết kế để hoạt động với hàng loạt NVR bảo mật, DVR và camera đám mây của chúng tôi. .",
+        "screenshots": ["https://raw.githubusercontent.com/tvstore012026/Anh/main/banerezviz.jpg"],
+        "downloadUrl": "https://tivixiaomi.vn/TVstore/truyenhinh/ezviz.apk",
+        "packageName": "com.ezviz.tv",
+        "category_name": "Camera"
+    },
+    {
+        "id": "cmr2",
+        "title": "Viettel Home",
+        "icon": "https://play-lh.googleusercontent.com/gi2E_pLsxeeV98O7mVw0gLtAOZotk-tsksHgWCCK5CrhPZN_k3lNEsHcCZYOlRekc98",
+        "rating": 5,
+        "version": "1.4.0",
+        "description": "Viettel Home là ứng dụng cung cấp giải pháp toàn diện về nhà thông minh và giám sát an ninh cho gia đình bạn..",
+        "screenshots": ["https://play-lh.googleusercontent.com/ZoTc0RazJjT5d6B4kWUE5VPp8LuFcz9axvuG-eK-uMuiFuk2Ym6g-9zC8C21AteSNo4=w526-h296-rw"],
+        "downloadUrl": "https://tivixiaomi.vn/TVstore/truyenhinh/viettelhome.apk",
+        "packageName": "com.vht.androidtv",
+        "category_name": "Camera"
+    },
+    {
+        "id": "cmr3",
+        "title": "Hik-Connect",
+        "icon": "https://phuongviethcm.com/wp-content/uploads/2019/10/hik-connect.jpg",
+        "rating": 5,
+        "version": "5.1.3.0320",
+        "description": "Ứng dụng EZVIZ được thiết kế để hoạt động với hàng loạt NVR bảo mật, DVR và camera đám mây của chúng tôi. .",
+        "screenshots": ["https://i.ytimg.com/vi/muvqvCMLrWk/maxresdefault.jpg"],
+        "downloadUrl": "https://tivixiaomi.vn/TVstore/truyenhinh/hikconnect.apk",
+        "packageName": "com.hikvision.hikconnect",
+        "category_name": "Camera"
+    },
+    {
+        "id": "cmr4",
+        "title": "YooSee Mobile",
+        "icon": "https://cdn.tgdd.vn/2020/04/GameApp/yoosee1-200x200.jpg",
+        "rating": 5,
+        "version": "00.46.06.17",
+        "description": "Ứng dụng EZVIZ được thiết kế để hoạt động với hàng loạt NVR bảo mật, DVR và camera đám mây của chúng tôi. .",
+        "screenshots": ["https://news.vio.vn/wp-content/uploads/2023/06/cach-mo-camera-tren-tivi-Samsung-don-gian-1.jpg"],
+        "downloadUrl": "https://tivixiaomi.vn/TVstore/truyenhinh/yoosee.apk",
+        "packageName": "com.yoosee",
+        "category_name": "Camera"
+    },
+    {
+        "id": "cmr5",
+        "title": "Imou Life HD",
+        "icon": "https://play-lh.googleusercontent.com/Pq_MMVRqky0xCkaKBuzCmhxxIgszx2Pl9Q17LRkV63wd28shIXE5RrTHFNhKiWsleXk",
+        "rating": 5,
+        "version": "1.1.10",
+        "description": "Ứng dụng EZVIZ được thiết kế để hoạt động với hàng loạt NVR bảo mật, DVR và camera đám mây của chúng tôi. .",
+        "screenshots": ["https://play-lh.googleusercontent.com/LeHHjTxdbvHpL59cGD_-bN5PvxLU2tMMMy9MNXALIMW1I21yv9fuaLS4Vw907cWZ-_uH-1xHb6QIoPAS3UMh=w526-h296-rw"],
+        "downloadUrl": "https://github.com/rupanh123-phap/928394040393939339393939949430038458575758933030202020202848485858585949400485858585859402.github.io/releases/download/V1.0.0/imou.apk",
+        "packageName": "com.imoulife.phap",
+        "category_name": "Camera"
+    },
+    {
+        "id": "cmr6",
+        "title": "KBviewPlus",
+        "icon": "https://dl.memuplay.com/new_market/img/com.mm.android.direct.KBVISIONVIEWPlus.icon.2025-01-02-02-28-37.png",
+        "rating": 5,
+        "version": "4.0",
+        "description": "Ứng dụng giám sát camera cho thiết bị của KBVISION: .",
+        "screenshots": ["https://i.ytimg.com/vi/r_RlHtX4OF0/maxresdefault.jpg"],
+        "downloadUrl": "https://kbvisiongroup.com/software/KBViewPlus_MultiLang_Basic_IS_V1.099.0000002.0.R.240319.apk",
+        "packageName": "com.ezviz.tv",
+        "category_name": "Camera"
+    }
+    ],
+  "Trình Phát Video - Truyền Màn Hình ĐT lên TV": [
+      {
+        "id": "tpv1",
+        "title": "VCL",
+        "icon": "https://play-lh.googleusercontent.com/nPnJc260PPoupBe-DcVQ-MNr6149dphdEoEAN-C9xwgctpVXbwsuyon_jEZ3uPWWYQ",
+        "rating": 5,
+        "version": "mới nhất",
+        "description": "Một ứng dụng hoàn toàn mới.",
+        "screenshots": ["https://taichinhketoanedu.com/uploads/vlc-moi-nhat.jpg"],
+        "downloadUrl": "https://github.com/rupanh123-phap/928394040393939339393939949430038458575758933030202020202848485858585949400485858585859402.github.io/releases/download/V1.0.0/vlc.apk",
+        "packageName": "org.videolan.vlc",
+        "category_name": "Trình Phát Video"
+    },
+    {
+        "id": "tpv2",
+        "title": "MX Player Pro",
+        "icon": "https://raw.githubusercontent.com/rupanh123-phap/928394040393939339393939949430038458575758933030202020202848485858585949400485858585859402.github.io/refs/heads/main/mxp.png",
+        "rating": 5,
+        "version": "mới nhất",
+        "description": "Một ứng dụng hoàn toàn mới.",
+        "screenshots": ["https://cdn.aptoide.com/imgs/e/2/9/e291471b520d5a69acc18f8273f96157_feature_graphic.png"],
+        "downloadUrl": "https://github.com/rupanh123-phap/PHAPFERRARI.github.io/releases/download/V1.0.0/mx64.apk",
+        "packageName": "com.mxtech.videoplayer.pro",
+        "category_name": "Trình Phát Video"
+    },
+    {
+        "id": "tpv3",
+        "title": "APlayer",
+        "icon": "https://play-lh.googleusercontent.com/vxkarvy-wCnMYFqKKjfAZgwZH3PZdY5fuhEtKa1kgpk5kLvdeI9xeoPI47i42pCCId0",
+        "rating": 5,
+        "version": "mới nhất",
+        "description": "Một ứng dụng hoàn toàn mới.",
+        "screenshots": ["https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/a1/c7/4e/a1c74eea-9c85-ca71-5a89-8a4164b9648c/App_Icon-marketing.lsr/1200x630bb.png"],
+        "downloadUrl": "https://github.com/rupanh123-phap/928394040393939339393939949430038458575758933030202020202848485858585949400485858585859402.github.io/releases/download/V1.0.0/aplayer.apk",
+        "packageName": "team.alpha.aplayer",
+        "category_name": "Trình Phát Video"
+    },
+    {
+        "id": "tpv4",
+        "title": "Just Player",
+        "icon": "https://play-lh.googleusercontent.com/LNF01ydGbukqvbFU9pTcZDSRfi86ipAqSdH0Mksb4vk3B4urmMx5qO37OvYXlBalXBE=w240-h480-rw",
+        "rating": 5,
+        "version": "mới nhất",
+        "description": "Một ứng dụng hoàn toàn mới.",
+        "screenshots": ["https://cdn.aptoide.com/imgs/7/4/4/744d9986d18329fb63161c64fbdec371_feature_graphic.png"],
+        "downloadUrl": "https://github.com/rupanh123-phap/928394040393939339393939949430038458575758933030202020202848485858585949400485858585859402.github.io/releases/download/V1.0.0/justplayerl.apk",
+        "packageName": "com.brouken.player",
+        "category_name": "Trình Phát Video"
+    },
+    {
+        "id": "tpv5",
+        "title": "Vimu Media Player",
+        "icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkMxs2U5lr47O_VgOR0EeutZ9-7-yvkDzQ_Al_xwN4UdsQBa7roB5MRps&s=10",
+        "rating": 5,
+        "version": "mới nhất",
+        "description": "Vimu là ứng dụng trình phát đa phương tiện nâng cao dành cho Android TV, Fire TV hoặc Google TV của bạn. Phiên bản đã được mod việt hoá.",
+        "screenshots": ["https://m.media-amazon.com/images/I/41XdsMoLUyL.png"],
+        "downloadUrl": "https://github.com/rupanh123-phap/928394040393939339393939949430038458575758933030202020202848485858585949400485858585859402.github.io/releases/download/V1.0.0/vimu.apk",
+        "packageName": "net.gtvbox.videoplayer",
+        "category_name": "Trình Phát Video"
+    },
+    {
+        "id": "tpv6",
+        "title": "CastReceiver (Google Cast)",
+        "icon": "https://downloadr2.apkmirror.com/wp-content/uploads/2024/07/75/669a63609d9d2_com.softmedia.receiver.castapp.png",
+        "rating": 5,
+        "version": "mới nhất",
+        "description": "Truyền màn hình - Google Cast cho thiết bị không hỗ trợ 😘.",
+        "screenshots": ["https://opengraph.githubassets.com/f9a687ebbfd618dc3bafc1bba49d211fcdd2d2ddde8f544da78e1f523ee5d011/googlecast/CastReceiver"],
+        "downloadUrl": "https://github.com/rupanh123-phap/928394040393939339393939949430038458575758933030202020202848485858585949400485858585859402.github.io/releases/download/V1.0.0/castreceiver.apk",
+        "packageName": "com.softmedia.receiver.castapp",
+        "category_name": "Trình Phát Video"
+    }
+  ],
+  "Tiện Ích Khác": [
+    {
+      "id": "tc1",
+      "title": "Tốc độ mạng",
+      "icon": "https://play-lh.googleusercontent.com/1LKWySZIE8Shx6Y1oy1LgrAtgDo-FwweOmW1hnfTVggPOM0txJ1qYtc8G8XOEfDpGA",
+      "rating": 4.9,
+      "version": "1.1.3",
+      "description": "Kiểm tra Tốc độ. Internet Speed Test - VNPT NET. booked.net. Test your internet speed Company Logo. GO. VNPT-NET. Ha Noi. All trademarks of Ookla, LLC, .",
+      "screenshots": [
+        "https://www.tapsmart.com/wp-content/uploads/2021/09/speedtest-header-930x620.jpg"
+      ],
+      "downloadUrl": "https://github.com/rupanh123-phap/928394040393939339393939949430038458575758933030202020202848485858585949400485858585859402.github.io/releases/download/V1.0.0/sp.apk",
+      "packageName": "com.kt.apps.media.xemtv.beta",
+      "category_name": "Tiện Ích"
+    },
+    {
+      "id": "tc2",
+      "title": "Ferarri Downloader",
+      "icon": "https://m.media-amazon.com/images/I/31KVvZnHbuL.png",
+      "rating": 4.8,
+      "version": "25.04.06.B",
+      "description": "...",
+      "screenshots": [
+        "https://images.sftcdn.net/images/t_app-cover-s,f_auto/p/a5f25f71-bbea-43e5-ad48-13299a6ef532/1553070200/downloader-by-aftvnews-Downloader-by-AFTVnews-for-Android.jpg"
+      ],
+      "downloadUrl": "https://github.com/rupanh123-phap/928394040393939339393939949430038458575758933030202020202848485858585949400485858585859402.github.io/releases/download/V1.0.0/ferraridownloader.apk",
+      "packageName": "com.kt.apps.media.xemtv.beta",
+      "category_name": "Tiện Ích"
+    }
+  ],
+    "Giao Diện": [
+      {
+        "id": "gd1",
+        "title": "Đang cập nhật",
+        "icon": "https://raw.githubusercontent.com/tvstore012026/tvstore/main/logo.png",
+        "rating": 5,
+        "version": "1.0.0",
+        "description": "Một ứng dụng hoàn toàn mới.",
+        "screenshots": [],
+        "downloadUrl": "...",
+        "packageName": "com.example.newapp",
+        "category_name": "Giao Diện"
+    },
+    {
+       "id": "gd2",
+        "title": "ATV Launcher PRO",
+        "icon": "https://raw.githubusercontent.com/rupanh123-phap/928394040393939339393939949430038458575758933030202020202848485858585949400485858585859402.github.io/refs/heads/main/atv.png",
+        "rating": 5,
+        "version": "1.0.0",
+        "description": "Một ứng dụng hoàn toàn mới.",
+        "screenshots": ["https://play-lh.googleusercontent.com/K9ezslXnY0Y_SvZrjV3wWQkbnViIDKUAFVUA6PyzMpveV661gnuBKLiwngfAhagxXko=w526-h296-rw"],
+        "downloadUrl": "https://github.com/rupanh123-phap/928394040393939339393939949430038458575758933030202020202848485858585949400485858585859402.github.io/releases/download/V1.0.0/atvlauncher.apk",
+        "packageName": "ca.dstudio.atvlauncher.pro",
+        "category_name": "Giao Diện"
+    },
+    {
+        "id": "gd3",
+        "title": "Projectivy Launcher",
+        "icon": "https://play-lh.googleusercontent.com/6bigO3_72JW9xTdkX7Mpm8fTBiP7ISDCUcI2E3C79P21uwuJC6VWD8pFxH-bXvc-CVZm",
+        "rating": 5,
+        "version": "1.0.0",
+        "description": "Một ứng dụng hoàn toàn mới.",
+        "screenshots": ["https://play-lh.googleusercontent.com/6bigO3_72JW9xTdkX7Mpm8fTBiP7ISDCUcI2E3C79P21uwuJC6VWD8pFxH-bXvc-CVZm"],
+        "downloadUrl": "https://github.com/rupanh123-phap/PHAPFERRARI.github.io/releases/download/V1.0.0/prolauncher.apk",
+        "packageName": "com.spocky.projengmenu",
+        "category_name": "Giao Diện"
+    }
+  ]
+}
