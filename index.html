@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kho Ứng Dụng TV</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: white;
+            font-family: sans-serif;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 { color: #00e676; }
+        .app-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .app-item {
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 2px solid #333;
+        }
+        .app-item:hover, .app-item:focus {
+            border-color: #00e676;
+            background-color: #2a2a2a;
+        }
+        .app-info { text-align: left; }
+        .app-name { font-size: 20px; font-weight: bold; }
+        .app-package { color: #888; font-size: 14px; }
+        .btn-install {
+            background-color: #00e676;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Kho APK Của Tôi</h1>
+    <div class="app-list" id="app-container">
+        <!-- Danh sách app tự động load từ apps.json -->
+    </div>
+
+    <script>
+        // Tự động đọc dữ liệu từ file apps.json của bác
+        fetch('apps.json')
+            .then(response => response.json())
+            .then(data => {
+                const container = document.getElementById('app-container');
+                data.forEach(app => {
+                    const appHtml = `
+                        <div class="app-item" tabindex="0">
+                            <div class="app-info">
+                                <div class="app-name">${app.name}</div>
+                                <div class="app-package">${app.package}</div>
+                            </div>
+                            <a class="btn-install" href="${app.download_url}">Cài đặt</a>
+                        </div>
+                    `;
+                    container.innerHTML += appHtml;
+                });
+            });
+    </script>
+</body>
+</html>
