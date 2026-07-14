@@ -5,3 +5,10 @@
     "download_url": "https://trongbts.github.io/kho-app/youtube.apk",
     "icon": "https://trongbts.github.io/kho-app/youtube.png"
   },
+  {
+    "name": "TPTV",
+    "package": "com.nghenhin24h.vietplaytv",
+    "download_url": "https://trongbts.github.io/kho-app/tptv.apk",
+    "icon": "https://trongbts.github.io/kho-app/tptv.png"
+  }
+]
