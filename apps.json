@@ -1,0 +1,57 @@
+[
+  {
+    "id": "dl_store",
+    "name": "DL Store 16.0.5",
+    "url": "https://raw.githubusercontent.com/trongbts/kho-app/main/DL_Store_16.0.5.apk"
+  },
+  {
+    "id": "dl_tivi",
+    "name": "DL Tivi 14",
+    "url": "https://raw.githubusercontent.com/trongbts/kho-app/main/DL_Tivi_14.apk"
+  },
+  {
+    "id": "downloader",
+    "name": "Downloader v1",
+    "url": "https://raw.githubusercontent.com/trongbts/kho-app/main/dowloaderv1.apk"
+  },
+  {
+    "id": "ferrari",
+    "name": "Ferrari",
+    "url": "https://raw.githubusercontent.com/trongbts/kho-app/main/ferrari.apk"
+  },
+  {
+    "id": "get_out_2",
+    "name": "Get Out 2",
+    "url": "https://raw.githubusercontent.com/trongbts/kho-app/main/Get_Out_2.end.apk"
+  },
+  {
+    "id": "phim4k",
+    "name": "Phim 4K",
+    "url": "https://raw.githubusercontent.com/trongbts/kho-app/main/phim4k.apk"
+  },
+  {
+    "id": "tiktok",
+    "name": "TikTok",
+    "url": "https://raw.githubusercontent.com/trongbts/kho-app/main/tiktok.apk"
+  },
+  {
+    "id": "vietmitv",
+    "name": "VietmiTV",
+    "url": "https://raw.githubusercontent.com/trongbts/kho-app/main/vietmitv.apk"
+  },
+  {
+    "id": "vxmstore",
+    "name": "VXM Store",
+    "url": "https://raw.githubusercontent.com/trongbts/kho-app/main/vxmstore.apk"
+  },
+  {
+    "id": "xem_tv365",
+    "name": "Xem TV365 - v3",
+    "url": "https://raw.githubusercontent.com/trongbts/kho-app/main/Xem_TV365-v3.apk"
+  },
+  {
+    "id": "youtube",
+    "name": "YouTube 5.30",
+    "url": "https://raw.githubusercontent.com/trongbts/kho-app/main/YouTube_5.30.apk"
+  }
+]
