@@ -17,9 +17,9 @@
   },
   {
     "appName": "Chợ Ứng Dụng DLStore",
-    "packageName": "com.dlstore.app",
+    "packageName": "com.dinhlap.dlstore",
     "versionCode": 2,
-    "versionName": "1.2",
+    "versionName": "16.0.5",
     "apkUrl": "https://github.com/trongbts/kho-app/releases/download/v1.0/DLstore.apk",
     "iconUrl": "https://raw.githubusercontent.com/trongbts/kho-app/main/logos/dlstore.png"
   }
