@@ -11,7 +11,7 @@
     "appName": "DVT Smart Karaoke",
     "packageName": "com.dvt.smartkaraoke",
     "versionCode": 5,
-    "versionName": "2.1",
+    "versionName": "1.0.0",
     "apkUrl": "https://github.com/trongbts/kho-app/releases/download/v1.0/DVTSmartKaraoke.apk",
     "iconUrl": "https://raw.githubusercontent.com/trongbts/kho-app/main/logos/karaoke.png"
   },
