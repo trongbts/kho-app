@@ -1,4 +1,4 @@
-# HP Store (HP UpdateAPP)
+UpdateAPP
 
 Ứng dụng quản lý và cập nhật phần mềm tối ưu dành riêng cho thiết bị Android TV / TV Box.
 
