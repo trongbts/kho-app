@@ -1,19 +1,12 @@
+
 [
   {
-    "appName": "HP Tivi",
-    "packageName": "com.hp.tivi",
+    "appName": "YOUTUBE GỐC",
+    "packageName": "com.youtube.tv",
     "versionCode": 1,
     "versionName": "1.0",
-    "apkUrl": "https://github.com/trongbts/kho-app/releases/download/v1.0/HPtivi.apk",
-    "iconUrl": "https://raw.githubusercontent.com/trongbts/kho-app/main/logos/hptivi.png"
-  },
-  {
-    "appName": "DVT Smart Karaoke",
-    "packageName": "com.dvt.smartkaraoke",
-    "versionCode": 5,
-    "versionName": "1.0.0",
-    "apkUrl": "https://github.com/trongbts/kho-app/releases/download/v1.0/DVTSmartKaraoke.apk",
-    "iconUrl": "https://raw.githubusercontent.com/trongbts/kho-app/main/logos/karaoke.png"
+    "apkUrl": "https://github.com/trongbts/kho-app/releases/download/v1.0/YouTube_5.30.301.apk",
+    "iconUrl": "https://raw.githubusercontent.com/trongbts/kho-app/main/logos/app-googletv-ytb.png"
   },
   {
     "appName": "Chợ Ứng Dụng DLStore",
@@ -22,5 +15,70 @@
     "versionName": "16.0.5",
     "apkUrl": "https://github.com/trongbts/kho-app/releases/download/v1.0/DLstore.apk",
     "iconUrl": "https://raw.githubusercontent.com/trongbts/kho-app/main/logos/dlstore.png"
+  },
+  {
+    "appName": "XIAOMI SRORE",
+    "packageName": "com.vxm.store",
+    "versionCode": 1,
+    "versionName": "1.0",
+    "apkUrl": "https://github.com/trongbts/kho-app/releases/download/v1.0/vxmstore.1.apk",
+    "iconUrl": "https://raw.githubusercontent.com/trongbts/kho-app/main/logos/app-vxm.png"
+  },
+  {
+    "appName": "GETOUT NEW",
+    "packageName": "com.linor.getout",
+    "versionCode": 1,
+    "versionName": "1.0",
+    "apkUrl": "https://github.com/trongbts/kho-app/releases/download/v1.0/getout_new.apk",
+    "iconUrl": "https://raw.githubusercontent.com/trongbts/kho-app/main/logos/app-get-out.png"
+  },
+  {
+    "appName": "GOOGLE VOICE 7.5",
+    "packageName": "com.google.katniss",
+    "versionCode": 1,
+    "versionName": "1.0",
+    "fileType": "xapk",
+    "apkUrl": "https://github.com/trongbts/kho-app/releases/download/v1.0/Google-voice.xapk",
+    "iconUrl": "https://raw.githubusercontent.com/trongbts/kho-app/main/logos/google_2335348.png"
+  },
+  {
+    "appName": "RẠP PHIM",
+    "packageName": "com.rap.phim",
+    "versionCode": 1,
+    "versionName": "1.0",
+    "apkUrl": "https://github.com/trongbts/kho-app/releases/download/v1.0/rapphim.apk",
+    "iconUrl": "https://raw.githubusercontent.com/trongbts/kho-app/main/logos/app-rapphim.png"
+  },
+  {
+    "appName": "DVT Smart Karaoke",
+    "packageName": "com.dvt.smartkaraoke",
+    "versionCode": 5,
+    "versionName": "1.0.0",
+    "apkUrl": "https://github.com/trongbts/kho-app/releases/download/v1.0/DVTSmartKaraoke.apk",
+    "iconUrl": "https://raw.githubusercontent.com/trongbts/kho-app/main/logos/karaoke.png"  
+  },
+  {
+    "appName": "APP 18",
+    "packageName": "com.example.app18",
+    "versionCode": 1,
+    "versionName": "1.0",
+    "apkUrl": "",
+    "iconUrl": ""
+  },
+  {
+    "appName": "APP 19",
+    "packageName": "com.example.app19",
+    "versionCode": 1,
+    "versionName": "1.0",
+    "apkUrl": "",
+    "iconUrl": ""
+  },
+  {
+    "appName": "APP 20",
+    "packageName": "com.example.app20",
+    "versionCode": 1,
+    "versionName": "1.0",
+    "apkUrl": "",
+    "iconUrl": ""
   }
 ]
